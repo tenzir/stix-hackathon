@@ -21,6 +21,24 @@ pub fn main() {
     "file--0203b5c8-f8b6-4ddb-9ad0-527d727f968b"
   ]
 }"#;
+
+let course_of_action = r#"
+  {
+    "type": "course-of-action",
+    "spec_version": "2.1",
+    "id": "course-of-action--8e2e2d2b-17d4-4cbf-938f-98ee46b3cd3f",
+    "created_by_ref": "identity--f431f809-377b-45e0-aa1c-6a4751cae5ff",
+    "created": "2016-04-06T20:03:48.000Z",
+    "modified": "2016-04-06T20:03:48.000Z",
+    "name": "mitigation-poison-ivy-firewall",
+    "description": "This action points to a recommended set of steps to respond to the Poison Ivy malware on a Cisco firewall device",
+    "action_type": "cisco:ios",
+    "action_reference":
+        { "source_name": "internet",
+          "url": "hxxps://www.stopthebad.com/poisonivyresponse.asa"
+        }
+  }"#;
+
     println!(
         "{:?}",
         serde_json::from_str::<sdo::STIXDomainObject>(attack_pattern_json)
@@ -32,6 +50,11 @@ pub fn main() {
     println!(
         "{:?}",
         serde_json::from_str::<sdo::STIXDomainObject>(grouping_json)
+    );
+
+    println!(
+        "{:?}",
+        serde_json::from_str::<sdo::STIXDomainObject>(course_of_action)
     );
 }
 
