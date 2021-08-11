@@ -1,6 +1,5 @@
 pub type Identifier = String;
 pub type List<T> = Vec<T>;
-pub type ExternalReference = String; // TODO
 pub type KillChainPhase = String; // TODO
 pub type OpenVocab = String; // TODO
 pub type Timestamp = String; // TODO
