@@ -1,10 +1,21 @@
+use serde::{Deserialize, Serialize};
+
 pub type Identifier = String;
 pub type List<T> = Vec<T>;
-pub type KillChainPhase = String; // TODO
-pub type OpenVocab = String; // TODO
-pub type Timestamp = String; // TODO
+pub type KillChainPhase = String;
+pub type OpenVocab = String;
+pub type Timestamp = String;
 pub type Boolean = bool;
-pub type ExternalReference = String; // TODO
-pub type GranularMarking = String; // TODO
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct ExternalReference {
+    source_name: String,
+    description: Option<String>,
+    url: Option<String>,
+    hashes: Option<String>,
+    external_id: Option<String>
+}
+
+pub type GranularMarking = String;
 pub type Integer = i64;
-pub type Dictionary = String; // TODO
+pub type Dictionary = String;
