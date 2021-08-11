@@ -1,9 +1,8 @@
-use common_types::*;
+use crate::common::types::*;
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct AttackPattern {
-    type: String,
     external_references: Option<List<ExternalReference>>,
     name: String,
     description: Option<String>,
